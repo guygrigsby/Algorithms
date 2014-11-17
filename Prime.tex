@@ -53,10 +53,20 @@ $$f(x) \equiv g(x)\ mod\ n$$
 
 In the above relationship, $f(x)$ and $g(x)$ are in the same equivalence class. The congruence relation operator $\equiv$ is way we compare polynomials in a modular way. It is used in place of the more familiar style for integers $ 9\ mod\ 2 = 1 $. Let's look at a basic example of polynomial congruence.
 
-$$(6x^2+9x+1) \equiv (2x^2+x-3)\ mod\ 4$$ This is true because
-$$ 6 \equiv 2\ mod\ 4 $$
-$$ 9 \equiv 1\ mod\ 4 $$
-$$ 1 \equiv -3\ mod\ 4 $$
+$$(6x^2+9x+1) \equiv (2x^2+x-3)\ mod\ 4$$ We can see why this is true in the following table. The table lists the congrence expression on the left and the standard equality we are used to on the right. 
+
+\begin{center}
+    \begin{tabular}{ | l | l |}
+    \hline
+	Congruence & Equality \\ \hline
+	$ 6 \equiv 2\ mod\ 4 $ & $6\ mod\ 4=2$\\ \hline
+	$ 9 \equiv 1\ mod\ 4 $ & $9\ mod\ 4=1$\\ \hline
+	$ 1 \equiv -3\ mod\ 4 $ & $1\ mod\ 4\not=-3\Leftarrow$ what the hell is this?\\ \hline
+    \end{tabular}
+\end{center}
+
+As you can see the comparison breaks down when used on negative numbers. Let's loot at this another way. When we say $6 \equiv 2\ mod\ 4$, we are saying that 6 and 2 are in the same equvalence class, $mod\ 4$. The same goes for $1 \equiv-3\ mod\ 4$, but it may not be intuitive. We all know that the \emph{positive} integers in the equivalence class for $1\ mod\ 4$ are $\{1,5,9,13,17,...\}$. In general 
+
 \begin{ex}
 $(4x^2+5) \stackrel{?}{\equiv} (x+9)$
 \end{ex}
