@@ -1,1 +1,1 @@
-Simple implementation of Floyd's Algorithm in Java
+Work for Algorithms and Algorithm Analysis
