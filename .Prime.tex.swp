@@ -30,7 +30,7 @@ If $n$ is prime then for all integers $m$:
 \end{equation}
 \end{lemma}
 
-I am not going to prove these here so you'll have to take my word for it, or look it up in the text. \footnote{"Foundations of Algorithms" by Neopolitan and Naimipour (page 460) can be found in Jerry's office.} It should be noted that this lemma can also be used to prove primality, but it does so in exponential time. A natural extension to this lemma is to claim, as I will now, that if $m$ and $n$ are relatively prime then $n$ is prime if and only if 
+I am not going to prove these here so you'll have to take my word for it, or look it up in the text. \footnote{"Foundations of Algorithms" by Neopolitan and Naimipour (page 460) can be found in Jerry's office. Most of the examples contained herein are also stolen from this book.} It should be noted that this lemma can also be used to prove primality, but it does so in exponential time. A natural extension to this lemma is to claim, as I will now, that if $m$ and $n$ are relatively prime then $n$ is prime if and only if 
 
 $$(x-m)^n \equiv (x^n -m)\ mod\ n$$
 
