@@ -4,13 +4,20 @@
 \usepackage{amssymb,amsmath,amsthm, mathtools}
 \pagenumbering{Roman}
 
+\newtheorem{ex}{Exercise}
+\newenvironment{ex*}
+  {\renewcommand\theex{\thechapter.\arabic{ex}\rlap{$^*$}}\ex}
+  {\endex}
+
+\newtheorem{definition}{Definition}
+
 \title{\textbf{AKS Primality Test}}
 \author{Guy J Grigsby}
 \begin{document}
 \maketitle
 \vspace{2pc}
 \section{Background}
-The Agrawal-Kayal-Saxena primality test is a polonomial time algorithm that tests to see if a given number $n$ is prime. It's based on, what mathematicians call, elementary number theory so I will do my best to fumble through it. The first and possibly most of important part of this is Fermat's Little Theorum. This theorum tells us that if $p$ is a prime number, then for any integer $a$, $(a^p - a)$ is divisible by $p$. Put another way:
+The Agrawal-Kayal-Saxena primality test is a polynomial time algorithm that tests to see if a given number $n$ is prime. It's based on, what mathematicians call, elementary number theory so I will do my best to fumble through it. The first and possibly most of important part of this is Fermat's Little Theorum. This theorum tells us that if $p$ is a prime number, then for any integer $a$, $(a^p - a)$ is divisible by $p$. Put another way:
 	
 \newtheorem{thm}{Theorum}\label{fermat}
 \begin{thm}[Fermat's Little Theorum]
@@ -36,7 +43,7 @@ $$(x-m)^n \equiv (x^n -m)\ mod\ n$$
 
 Now this may look like I just wrote the same thing again to fill space. That is not completely true. I did write it again and it did take up more space, but it was for another reason. Emphasis. This is the basis of the AKS primality test. Before looking at an example we must first define the congruency operator $\equiv$ and how the $mod$ operator works on polunomials. We are used to working with $mod$ on integers and it behaves much the same way, but some clarification is needed. 
 
-\newtheorem{definition}{Definition}
+
 \begin{definition}
 Let f(x) and g(x) be polynomials  that have integer coefficients. If the coefficients of each magintude of x are congruent mod n, then it can be said that f(x) and g(x) are congurent mod n. This can also be expressed as follows:
 
@@ -44,13 +51,17 @@ $$f(x) \equiv g(x)\ mod\ n$$
  
 \end{definition}
 
-In the above relationship, $f(x)$ and $g(x)$ are in the same equivalence class. The congruence relation operator $\equiv$ is way we compare polynomials in a modular way. It is used in place of the more familiar style for integers $ 9\ mod\ 2 = 1 $. Lets look at a basic example of polynomial congruence.
+In the above relationship, $f(x)$ and $g(x)$ are in the same equivalence class. The congruence relation operator $\equiv$ is way we compare polynomials in a modular way. It is used in place of the more familiar style for integers $ 9\ mod\ 2 = 1 $. Let's look at a basic example of polynomial congruence.
 
-$$(6x^2+9x+1) \equiv (2x^2+x+3)\ mod\ 4$$ is true because
+$$(6x^2+9x+1) \equiv (2x^2+x-3)\ mod\ 4$$ This is true because
 $$ 6 \equiv 2\ mod\ 4 $$
 $$ 9 \equiv 1\ mod\ 4 $$
 $$ 1 \equiv -3\ mod\ 4 $$
-Thus the two polynomilas are equivalent.
+\begin{ex}
+$(4x^2+5) \stackrel{?}{\equiv} (x+9)$
+\end{ex}
+\vspace{10pc}
+Now that we are armed with the tools we need, we can go back to the congruence realtion $(x-m)^n \equiv (x^n -m)\ mod\ n$.
 
 
 
