@@ -17,7 +17,7 @@
 \maketitle
 \vspace{2pc}
 \section{Background}
-The Agrawal-Kayal-Saxena primality test is a polynomial time algorithm that tests to see if a given number $n$ is prime. It's based on, what mathematicians call, elementary number theory so I will do my best to fumble through it. The first and possibly most of important part of this is Fermat's Little Theorum. This theorum tells us that if $p$ is a prime number, then for any integer $a$, $(a^p - a)$ is divisible by $p$. Put another way:
+The Agrawal-Kayal-Saxena primality test is a polynomial time algorithm that tests to see if a given number $n$ is prime. It's based on, what mathematicians call, elementary number theory so I will do my best to fumble through it. The first and possibly most of important part of this is Fermat's Little Theorum. This theorum tells us that if $p$ is a prime number, then for any integer $a$, $p\ |\ (a^p - a)$. Put another way:
 	
 \newtheorem{thm}{Theorum}\label{fermat}
 \begin{thm}[Fermat's Little Theorum]
@@ -65,7 +65,7 @@ $$(6x^2+9x+1) \equiv (2x^2+x-3)\ mod\ 4$$ We can see why this is true in the fol
     \end{tabular}
 \end{center}
 
-As you can see the comparison breaks down when used on negative numbers. Let's loot at this another way. When we say $6 \equiv 2\ mod\ 4$, we are saying that 6 and 2 are in the same equvalence class, $mod\ 4$. The same goes for $1 \equiv-3\ mod\ 4$, but it may not be intuitive. We all know that the \emph{positive} integers in the equivalence class for $1\ mod\ 4$ are $\{1,5,9,13,17,...\}$. In general 
+As you can see the comparison breaks down when used on negative numbers. Let's loot at this another way. When we say $6 \equiv 2\ mod\ 4$, we are saying that 6 and 2 are in the same equvalence class, $mod\ 4$. The same goes for $1 \equiv-3\ mod\ 4$, but it may not be intuitive. We all know that the \emph{positive} integers in the equivalence class for $1\ mod\ 4$ are $\{1,5,9,13,17,...\}$. In general an equivalence class of $a\ mod\ n$ is $\{a,a+n,a+2n,a+3n,...\}$ or $\{a+kn\}\ \forall\ k\ \in\ \mathbb{Z}$. Now we're getting somewhere. So if we $let\ k = -1,\ a = 3\ and\ n = 4$ we can clearly see that $1 \equiv -3\ mod\ 4$. This we can see the complete equivalence class of $1\ mod\ 4$ is $\{...,-15,-11,-7,-3,1,5,9,13,17,...\}$
 
 \begin{ex}
 $(4x^2+5) \stackrel{?}{\equiv} (x+9)$
