@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amssymb,amsmath,amsthm, mathtools}
+
 \pagenumbering{Roman}
 
 \newtheorem{ex}{Exercise}
@@ -105,6 +106,20 @@ $$(x-10)^3 \equiv (x^3-10) \mod (x^2-1,3)$$
 (x-m)^n \equiv (x^n -m) \mod (x^r-1,n)
 \end{equation}
 \end{thm}
-\section{The Algorithm}
 The previous theorum is \emph{not} an \emph{if and only if} relationship which means that under certain circumstances a composite number for $n$ will satisfy the congruence. This can be overcome by trying multiple values of $m$ with an appropriate value for $r$.
+
+\section{The Algorithm}
+This is the algorithm exactly as it appears in the 2002 article entitled \emph{PRIMES is in P} by Agrawal, Kayal, and Saxena. \vspace{2pc}
+
+\texttt{
+Input: integer n > 1 \\
+1. If $(n=a^b$ for $a\in{\mathbb{N}}$ and  $b>1)$, output COMPOSITE. \\
+2. Find the smallest $r$ such that 	$o_n(a)>\log^2n$. \\
+3. If $1<gcd(a,n)<n$ for some $a\le{r}$, output COMPOSITE. \\
+4. If $n \le{r}$ output PRIME. \\
+5. For $a=1$ to $[\sqrt{\phi(r)}\log{n}]$ do \\
+\indent{if ($(X+a)^n\ne X^n+a(\mod{X^r-1},n)$), output COMPOSITE;} \\
+6. Output PRIME;
+}
+
 \end{document}
