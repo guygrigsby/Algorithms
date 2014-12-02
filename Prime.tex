@@ -114,12 +114,21 @@ This is the algorithm exactly as it appears in the 2002 article entitled \emph{P
 \texttt{
 Input: integer n > 1 \\
 1. If $(n=a^b$ for $a\in{\mathbb{N}}$ and  $b>1)$, output COMPOSITE. \\
-2. Find the smallest $r$ such that 	$o_n(a)>\log^2n$. \\
+2. Find the smallest $r$ such that 	$o_r(n)>\log^2n$. \\
 3. If $1<gcd(a,n)<n$ for some $a\le{r}$, output COMPOSITE. \\
 4. If $n \le{r}$ output PRIME. \\
 5. For $a=1$ to $[\sqrt{\phi(r)}\log{n}]$ do \\
 \indent{if ($(X+a)^n\ne X^n+a(\mod{X^r-1},n)$), output COMPOSITE;} \\
-6. Output PRIME;
+6. Output PRIME; \\
 }
+
+Let's look at this step by step.
+\begin{enumerate}
+  \item This one is pretty self explanitory. These can be computed easily using modular exponentiation.
+  \item $o_r(n)$ is the multiplicative order of $r \mod n$. Given that $r$ and $n$ are relatively prime, the multiplicative order of $r \mod n$ is the smallest possible integer $k$ such that $r^k \equiv 1\mod n$.
+  \item Also obvious
+  \item More obvious
+  \item This loop goes from $1$ to $[\sqrt{\phi(r)}\log{n}]$. The function $\phi(r)$, also called \emph{Euler's totient function}, is a function that returns the count of all numbers $\le n$ that are relatively prime to $n$. The inner part of the loop is the Theorum from earlier based on Fermat's Little Theorum. 
+\end{enumerate}
 
 \end{document}
