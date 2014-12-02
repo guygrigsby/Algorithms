@@ -22,7 +22,7 @@
 \vspace{5pc}
 \section{Background}
 \subsection{Fermat's Little Theorum}
-The Agrawal-Kayal-Saxena primality test is a polynomial time algorithm that tests to see if a given number $n$ is prime. It's based on, what mathematicians call, elementary number theory so I will do my best to fumble through it. The first and possibly most of important part of this is Fermat's Little Theorum. This theorum tells us that if $p$ is a prime number, then for any integer $a$, $p\ |\ (a^p - a)$. Put another way:
+The Agrawal-Kayal-Saxena primality test is a polynomial time, precicely it is $\in\mathcal{O}(\log^\frac{21}{2}n) $, algorithm that tests to see if a given number $n$ is prime. The intuitive algorithm of primality testing by checking all odd numbers from $3$ up to $\sqrt{n}$ is $\in\mathcal{O}(\sqrt{n})$, which is exponential. AKS is based on, what mathematicians call, elementary number theory so I will do my best to fumble through it. The first and possibly most of important part of this is Fermat's Little Theorum. This theorum tells us that if $p$ is a prime number, then for any integer $a$, $p\ |\ (a^p - a)$. Put another way:
 	
 \newtheorem{thm}{Theorum}\label{fermat}
 \begin{thm}[Fermat's Little Theorum]
